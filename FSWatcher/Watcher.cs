@@ -25,6 +25,14 @@ namespace FSWatcher
 
 		public WatcherSettings Settings { get { return _settings; } }
 
+        /// <summary>
+        /// Gets a value indicating whether the underlying File System Watcher component is enabled.
+        /// </summary>
+        public bool IsAlive
+        {
+            get { return _fsw != null && _fsw.IsAlive; }
+        }
+
 		public Watcher(
 			string dir,
 			Action<string> directoryCreated,
